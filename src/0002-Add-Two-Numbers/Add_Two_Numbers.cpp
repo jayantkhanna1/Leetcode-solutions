@@ -1,11 +1,4 @@
-#include <iostream>
-// Definition for singly-linked list.
-struct ListNode 
-{
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(nullptr) {}
-};
+
 
 class Solution 
 {
@@ -61,23 +54,4 @@ void deleteListNode(ListNode *l1)
         delete l1;
         l1 = p;
     }
-}
-int main()
-{
-    ListNode *l1 = new ListNode(0);
-    l1->next = new ListNode(4);
-    l1->next->next = new ListNode(3);
-    ListNode *l2 = new ListNode(0);
-    l2->next = new ListNode(6);
-    l2->next->next = new ListNode(4);
-    ListNode * ret = Solution().addTwoNumbers(l1, l2);
-    while (ret != nullptr)
-    {
-        std::cout << ret->val << std::endl;
-        ret = ret->next;
-    }
-    deleteListNode(l1);
-    deleteListNode(l2);
-    deleteListNode(ret);
-    return 0;
 }
