@@ -1,9 +1,4 @@
-#include <string>
-#include <iostream>
-#include <vector>
-using namespace std;
 
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) 
@@ -37,10 +32,3 @@ public:
         return -1;
     }
 };
-int main()
-{
-    vector<int> nums1 = {1,3};
-    vector<int> nums2 = {2};
-    cout << Solution().findMedianSortedArrays(nums1, nums2) << endl;
-    return 0;
-}
