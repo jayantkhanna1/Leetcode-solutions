@@ -1,9 +1,3 @@
-#include <iostream>
-#include <string>
-#include <unordered_map>
-#include <stack>
-using namespace std;
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 class Solution 
 {
 public:
@@ -28,10 +22,4 @@ public:
         
         return mystack.size() == 0;
     }
-};
-int main()
-{
-    string str = "()";
-    cout << Solution().isValid(str) << endl;
-    return 0;
 }
