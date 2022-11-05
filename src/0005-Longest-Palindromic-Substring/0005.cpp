@@ -1,8 +1,3 @@
-#include <string>
-#include <iostream>
-using namespace std;
-
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 class Solution 
 {
 public:
@@ -30,9 +25,3 @@ public:
         return s.substr(start, maxLength);
     }
 };
-int main()
-{
-    string s = "babad";
-    cout << Solution().longestPalindrome(s) << endl;
-    return 0;
-}
