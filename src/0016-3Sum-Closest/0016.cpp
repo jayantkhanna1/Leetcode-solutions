@@ -1,9 +1,3 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-using namespace std;
-
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 class Solution 
 {
 public:
@@ -36,10 +30,3 @@ public:
         return result[0];
     }
 };
-int main()
-{
-    vector<int> nums = { -1, 2, 1, -4};
-    int target = 1;
-    cout << Solution().threeSumClosest(nums, target);
-    return 0;
-}
