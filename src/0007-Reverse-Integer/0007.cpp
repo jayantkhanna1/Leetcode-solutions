@@ -1,7 +1,4 @@
-#include <iostream>
-using namespace std;
 
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 const int I_MAX = 0x7fffffff/10;
 const int I_MIN = (-0x7fffffff - 1)/10;
 class Solution 
