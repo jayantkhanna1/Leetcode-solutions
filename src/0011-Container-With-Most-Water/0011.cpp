@@ -1,10 +1,3 @@
-#include <vector>
-#include <iostream>
-#include <algorithm>
-using namespace std;
-
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
-
 class Solution 
 {
 public:
@@ -22,9 +15,3 @@ public:
         return contain;
     }
 };
-int main()
-{
-    vector<int> height = {1, 1};
-    cout << Solution().maxArea(height) << endl;
-    return 0;
-}
