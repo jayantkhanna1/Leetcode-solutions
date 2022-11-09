@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
 
-static int x = [](){std::ios::sync_with_stdio(false);cin.tie(0);return 0;}();
 class Solution 
 {
 public:
@@ -30,11 +26,4 @@ public:
         return -1;
     }
 };
-int main()
-{
-    vector<int> arr = {4,5,6,7,0,1,2};
-    int target = 0;
-    cout << Solution().search(arr, target);
-    return 0;
-}
 
