@@ -1,36 +1,52 @@
-
-class Solution 
-{
+class Solution {
 public:
-    vector<vector<int>> fourSum(vector<int>& nums, int target) 
-    {
-        if (nums.size() < 4) return {};
-        vector<vector<int>> res;
-        sort(nums.begin(), nums.end());
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        //answer vector
+        vector<vector<int>> ans;
+        int n = nums.size();
+        // if the size of the given vector is small then we cannot find 4 sum so return a void vector
+        if(n<4) return ans;
         
-        for (int i = 0; i < nums.size() - 3; ++i)
-        {
-            if (nums[i] << 2 > target) break;
-            if (i > 0 and nums[i] == nums[i-1]) continue;
-            for (int j = nums.size() - 1; j > i + 2; --j)
-            {
-                if (nums[j] << 2 < target) break;
-                if (j < nums.size() - 1 and nums[j] == nums[j+1]) continue;
-                int l = i + 1, r = j -1;
-                while (l < r)
-                {
-                    if (target == nums[i] + nums[j] + nums[l] + nums[r])
-                    {
-                        res.push_back({nums[i], nums[l], nums[r], nums[j]});
-                        while (l < r and nums[l] == nums[l+1]) ++l;
-                        while (l < r and nums[r] == nums[r-1]) --r;
-                        ++l; --r;
+        //sort the vector to apply the pointers method
+        sort(begin(nums), end(nums));
+        // selection of the first candidate
+        for(int i=0;i<n;i++){
+            // this step will help in by-passing the interger overflow
+            long long nt1 = (long long) target - (long long)nums[i];
+            for(int j=i+1;j<n;j++){
+                //same here!
+                long long nt2 = nt1 - (long long)nums[j];
+                
+                int s = j+1, e = n-1;
+                while(s<e){
+                    //now as usual apply the two-pointers method to find the quad
+                    long long cur_sum = nums[s]+nums[e];
+                    if(cur_sum < nt2) s++;
+                    else if(cur_sum > nt2) e--;
+                    else{
+                        
+                        vector<int> q(4, 0);
+                        q[0] = nums[i];
+                        q[1] = nums[j];
+                        q[2] = nums[s];
+                        q[3] = nums[e];
+                        
+                        ans.push_back(q);
+                        
+                        // to avoid duplication of 3rd element
+                        while(s<e and nums[s]==q[2]) s++;
+                        
+                        // to avoid duplication of 4th element
+                        while(s<e and nums[e]==q[3]) e--;
                     }
-                    else if (target > nums[i] + nums[j] + nums[l] + nums[r]) ++l;
-                    else --r;
                 }
+                // to avoid the duplication of second element
+                while(j+1 < n and nums[j+1]==nums[j]) ++j;
             }
+            // to avoid the duplication of first element
+            while(i+1 < n and nums[i+1]==nums[i]) ++i;
         }
-        return res;
+        
+        return ans;
     }
 };
