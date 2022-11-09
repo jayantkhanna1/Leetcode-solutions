@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
 
-
-static int x = [](){std::ios::sync_with_stdio(false);cin.tie(0);return 0;}();
 class Solution 
 {
 public:
@@ -51,17 +46,3 @@ private:
         return board;
     }
 };
-
-int main()
-{
-    int n = 4;
-    vector<vector<string>> result = Solution().solveNQueens(n);
-    for (unsigned int i = 0; i < result.size(); ++i)
-    {
-        for (unsigned int j = 0; j < n; ++j)
-        {
-            cout << result[i][j] << endl;
-        }
-        cout << endl;
-    }
-}
