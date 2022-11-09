@@ -1,10 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-using namespace std;
 
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 class Solution 
 {
 public:
@@ -27,17 +21,3 @@ public:
         return result;
     }
 };
-int main()
-{
-    vector<int> nums = {1, 1, 2};
-    auto result  =Solution().permuteUnique(nums);
-    for (auto i : result)
-    {
-        for (auto j : i)
-        {
-            cout << j << " ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
