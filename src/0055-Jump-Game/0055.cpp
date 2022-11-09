@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
 
-
-static int x = [](){std::ios::sync_with_stdio(false);cin.tie(0);return 0;}();
 class Solution 
 {
 public:
@@ -18,8 +13,3 @@ public:
         return true;
     }
 };
-int main()
-{
-    vector<int> nums = {2,3,1,1,4};
-    cout << Solution().canJump(nums);
-}
