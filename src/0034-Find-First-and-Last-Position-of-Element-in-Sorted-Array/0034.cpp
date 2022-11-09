@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
 
-static int x = [](){std::ios::sync_with_stdio(false);cin.tie(0);return 0;}();
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) 
@@ -34,11 +29,3 @@ public:
         return result;
     }
 };
-int main()
-{
-    vector<int> arr = { 3, 2, 2, 3};
-    int target = 8;
-    auto result = Solution().searchRange(arr, target);
-    cout << result[0] << " " << result[1] << endl;
-    return 0;
-}
