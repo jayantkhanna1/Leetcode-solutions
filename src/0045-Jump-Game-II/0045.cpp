@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
 
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 class Solution 
 {
 public:
@@ -22,10 +17,3 @@ public:
         return step;
     }
 };
-
-int main()
-{
-    vector<int> nums = {3,4,-1,1};
-    cout << Solution().jump(nums);
-    return 0;
-}
