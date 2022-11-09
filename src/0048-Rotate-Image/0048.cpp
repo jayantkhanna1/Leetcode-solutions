@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-using namespace std;
 
-static int x = []() {std::ios::sync_with_stdio(false); cin.tie(0); return 0; }();
 class Solution 
 {
 public:
@@ -23,13 +18,3 @@ public:
         }
     }
 };
-int main()
-{
-    vector<vector<int>> matrix = {
-                                {1,2,3},
-                                {4,5,6},
-                                {7,8,9}
-                                };
-    Solution().rotate(matrix);
-    return 0;
-}
